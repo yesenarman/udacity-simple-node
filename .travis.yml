@@ -7,6 +7,8 @@ script:
   - docker version
   - docker build -t yesenarman/udacity-simple-node --build-arg FAVORITE_FOOD="$FAVORITE_FOOD" .
 
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push yesenarman/udacity-simple-node
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
