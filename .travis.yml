@@ -1,0 +1,12 @@
+language: node
+
+services:
+  - docker
+
+script:
+  - docker version
+  - docker build -t simple-node .
+
+after_success:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker push simple-node
