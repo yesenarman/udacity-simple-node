@@ -1,12 +1,12 @@
-language: node
+language: minimal
 
 services:
   - docker
 
 script:
   - docker version
-  - docker build -t simple-node .
+  - docker build -t yesenarman/simple-node .
 
 after_success:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker push simple-node
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME"
+  - docker push yesenarman/simple-node
