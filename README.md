@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/yesenarman/udacity-simple-node.svg?branch=master)](https://travis-ci.com/yesenarman/udacity-simple-node)
+
 # Overview
 This is a very simple, bare-bones NodeJS project created for you to use with Docker.
 
