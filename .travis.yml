@@ -5,8 +5,8 @@ services:
 
 script:
   - docker version
-  - docker build -t yesenarman/simple-node .
+  - docker build -t yesenarman/udacity-simple-node .
 
 after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME"
-  - docker push yesenarman/simple-node
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push yesenarman/udacity-simple-node
