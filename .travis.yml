@@ -5,7 +5,7 @@ services:
 
 script:
   - docker version
-  - docker build -t yesenarman/udacity-simple-node .
+  - docker build -t yesenarman/udacity-simple-node --build-arg FAVORITE_FOOD="$FAVORITE_FOOD" .
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
